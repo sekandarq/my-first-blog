@@ -2,15 +2,7 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 
-<html>
-    <head>
-        <title>Django Photo blog</title>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Photo Blog</a></h1>
-        </div>
+
 
 {% block content %}
     {% for post in posts %}
@@ -26,5 +18,3 @@
     {% endfor %}
 {% endblock %}
 
-    </body>
-</html>
