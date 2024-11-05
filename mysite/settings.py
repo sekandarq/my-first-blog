@@ -25,7 +25,7 @@ SECRET_KEY = 'p*wb+1x+4kl1*zy(&e4xrqbt9p*t09owapv6^0d*n6vc!xpbk5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '10.0.2.2', '.pythonanywhere.com']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog', # This line adds the blog application to the project.
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +121,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

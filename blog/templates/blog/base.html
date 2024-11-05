@@ -1,0 +1,38 @@
+<!-- blog/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Photo Blog{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'static/css/blog.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Photo Blog</h1>
+        <p>Capturing moments, one photo at a time.</p>
+        <nav>
+            <ul>
+                <li><a href="{% url 'post_list' %}">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        {% block content %}
+        <!-- The child template will inject the content here -->
+
+
+        {% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Photo Blog. All rights reserved.</p>
+        <p>Follow us on <a href="#">Instagram</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
+    </footer>
+</body>
+</html>

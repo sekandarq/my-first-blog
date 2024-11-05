@@ -18,8 +18,16 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
 
+#added by me
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
     path('admin/', admin.site.urls), # This line includes the admin site.
     path('', include('blog.urls')), # This line includes the blog.urls file.
 ]
+
+# added by me
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

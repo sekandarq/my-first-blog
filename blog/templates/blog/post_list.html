@@ -1,20 +1,30 @@
+<!-- blog/post_list.html -->
+{% extends 'blog/base.html' %}
+{% load static %}
+
 <html>
     <head>
-        <title> KHU's blog </title>
+        <title>Django Photo blog</title>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
         <div>
-            <h1><a href=""> KHU's blog </a></h1>
+            <h1><a href="/">Django Photo Blog</a></h1>
         </div>
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p> I love this class and doing web server project </p>
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="#">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <!-- blog image -->
+            <img src="{{ post.image.url }}" class="blog-image-list" alt="{{ post.title }}">
         </div>
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p> Thank you for visiting my blog </p>
-        </div>
+    {% endfor %}
+{% endblock %}
+
     </body>
 </html>
