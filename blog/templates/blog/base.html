@@ -7,17 +7,22 @@
         <title>My Photo Blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
-        <link rel="stylesheet" href= "{% static 'css/blog.css' %}">  
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
         <style>
             body {
                 padding-top: 50px;
             }
+             
             .blog-image-list {
                 width: 80%;
                 height: auto;
                 border-radius: 10px;
+            }
+
+            h1 a {
+                color: darkgreen;
             }
         </style>
 
@@ -25,7 +30,7 @@
 
     <body>
         <header>
-          <div>
+          <div class = "page-header">
               <h1><a href="/"> My Photo Blog</a></h1>
           </div>
         </header>
